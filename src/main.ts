@@ -64,12 +64,14 @@ export class Main {
       overwolf.games.events.onNewEvents.addListener(onNewEventsListener);
     }
 
+    // ---------------------------------------------------------------------------
     function unregisterEvents() {
       overwolf.games.events.onError.removeListener(onErrorListener);
       overwolf.games.events.onInfoUpdates2.removeListener(onInfoUpdates2Listener);
       overwolf.games.events.onNewEvents.removeListener(onNewEventsListener);
     }
 
+    // ---------------------------------------------------------------------------
     function gameLaunched(gameInfoResult: { gameInfo: { isRunning: any; id: number; }; runningChanged: any; gameChanged: any; }) {
       if (!gameInfoResult) {
         return false;
@@ -96,6 +98,7 @@ export class Main {
       }
     }
 
+    // ---------------------------------------------------------------------------
     function gameRunning(gameInfo: { isRunning: any; id: number; }) {
 
       if (!gameInfo) {
@@ -115,7 +118,7 @@ export class Main {
       }
     }
 
-
+    // ---------------------------------------------------------------------------
     function setFeatures() {
       overwolf.games.events.setRequiredFeatures(g_interestedInFeatures, function (info: { status: string; }) {
         if (info.status == "error") {
@@ -130,27 +133,10 @@ export class Main {
       });
     }
 
-    function getInfo() {
-      overwolf.games.events.getInfo(function (info: any) {
-        if (info.status == "success") {
-          let tmp_version = JSON.parse(info.res.gep_internal.version_info);
-          let version = tmp_version.local_version;
-          let elem = document.getElementById("dvDiff");
-          if (elem != null) {
-            elem.innerHTML = " <p>GEP version  <span style=color:red><strong>" + version + "</strong></span></p>";
-          }
-          else
-          window.setTimeout(getInfo, 2000);
-          return;
-        }
-      });
-    }
-
-
+    // ---------------------------------------------------------------------------
     // Start here
     overwolf.games.onGameInfoUpdated.addListener(function (res: { gameInfo: { isRunning: any; id: number; }; runningChanged: any; gameChanged: any; }) {
       if (gameLaunched(res)) {
-        getInfo();
         registerEvents();
         unregisterEvents();
         setTimeout(setFeatures, 1000);
@@ -160,7 +146,6 @@ export class Main {
 
     overwolf.games.getRunningGameInfo(function (res: { isRunning: any; id: number; }) {
       if (gameRunning(res)) {
-        getInfo();
         registerEvents();
         setTimeout(setFeatures, 1000);
       }
