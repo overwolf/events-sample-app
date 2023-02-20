@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es3",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    "strict": true,
+    "removeComments": true,
+  },
+  "typeRoots": [
+    "/types",
+    "/node_modules/@types"
+  ],
+  "rootDirs": [
+    "./src"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
