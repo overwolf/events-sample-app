@@ -1,5 +1,8 @@
 {
   "cSpell.words": [
     "tsyringe"
+  ],
+  "editor.rulers": [
+    80
   ]
 }

@@ -1,19 +1,19 @@
 {
-  "name": "Generic App",
+  "name": "generic-sample-app",
   "author": "Overwolf",
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "dev": "webpack --watch --mode=development",
-    "build:webpack": "webpack --config webpack.config.js",
+    "start": "webpack --watch --mode=development",
+    "build": "webpack --config webpack.config.js",
     "lint": "eslint src/**"
   },
   "license": "ISC",
   "devDependencies": {
-    "@types/jquery": "^3.5.14",
+    "@overwolf/types": "^3.23.1",
+    "@types/events": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
-    "css-loader": "^6.7.2",
     "del": "^6.0.0",
     "eslint": "^8.28.0",
     "eslint-config-overwolf": "^0.1.0",
@@ -21,6 +21,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^40.0.3",
+    "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
@@ -42,6 +44,7 @@
     "webpack-cli": "^5.0.0"
   },
   "dependencies": {
+    "events": "^3.3.0",
     "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.7.0",
     "typescript-logging": "^2.0.2",
