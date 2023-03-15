@@ -12,7 +12,8 @@
     "plugin:@typescript-eslint/recommended",
     "eslint-config-overwolf-ts",
     "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:jsdoc/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -29,7 +30,8 @@
   },
   "plugins": [
     "react",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "jsdoc"
   ],
   "rules": {
     "react/jsx-uses-react": "off",
@@ -40,6 +42,8 @@
     "@typescript-eslint/type-annotation-spacing": "off",
     "@typescript-eslint/no-use-before-define": "off",
     "no-use-before-define": "off",
+    "jsdoc/no-undefined-types": ["warn", {"definedTypes":["overwolf"]}],
+    "jsdoc/no-multi-asterisks": "off",
     "semi": [
       "error",
       "always"
