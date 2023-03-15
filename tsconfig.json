@@ -1,4 +1,10 @@
 {
   "extends": "./tsconfig.base.json",
   "exclude": ["test", "**/*.spec.ts"],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "types": [
+      "@overwolf/types"
+    ]
+  }
 }

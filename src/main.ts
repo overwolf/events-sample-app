@@ -1,156 +1,56 @@
 import 'reflect-metadata';
 import { container, injectable } from 'tsyringe';
-import games_config from './games_config.json';
+import gameData from './config/game-data';
+import { GEPService } from './services/gep-service';
+import { GameDetectionService } from './services/game-detection-service';
+import { GameClosedEvent, GameLaunchedEvent, PostGameEvent } from './interfaces/running-game';
+import { GEPConsumer } from './services/gep-consumer';
 
-// -----------------------------------------------------------------------------
-export interface Game {
-  title: string;
-  icon: string;
-  icon_gray: string;
-  interestedInFeatures?: string[];
-  description: string;
-}
-
-// -----------------------------------------------------------------------------
-export interface GameData {
-  [key: string]: Game;
-}
-
-declare global {
-  interface Window {
-    overwolf: any;
-  }
-}
 // -----------------------------------------------------------------------------
 @injectable()
 export class Main {
-  // ---------------------------------------------------------------------------
-  public constructor() {
-    this.run();
+
+  public constructor(
+    private readonly gepService: GEPService,
+    private readonly gepConsumer: GEPConsumer,
+    private readonly gameDetectionService: GameDetectionService
+    ) {
+    this.init();
   }
 
-  // ---------------------------------------------------------------------------
-  public run(): void {
-    const overwolf = window.overwolf;
-
-    let gameData = games_config.data as unknown as GameData;
-    let gameId;
-    let g_interestedInFeatures: any;
-
-    var onErrorListener: (info: any) => void, onInfoUpdates2Listener: (info: any) => void, onNewEventsListener: (info: any) => void;
-
-    function registerEvents() {
-
-      onErrorListener = function (info) {
-        console.log("Error: " + JSON.stringify(info));
+  /**
+   * Initializes this app
+   */
+  public init(): void {
+    // Register for the `gameLaunched` event from the game detection service
+    this.gameDetectionService.on('gameLaunched', (gameLaunch: GameLaunchedEvent) => {
+      console.log(`Game was launched: ${gameLaunch.name}`);
+      // Get the configured data for the launched game
+      const gameConfig = gameData[gameLaunch.id];
+      // If the detected game exists
+      if(gameConfig){
+        // Run the game launched logic of the gep service
+        this.gepService.onGameLaunched(gameConfig.interestedInFeatures);
       }
-
-      onInfoUpdates2Listener = function (info) {
-        console.log("Info UPDATE: " + JSON.stringify(info));
-      }
-
-      onNewEventsListener = function (info) {
-        console.log("EVENT FIRED: " + JSON.stringify(info));
-      }
-
-      // general events errors
-      overwolf.games.events.onError.addListener(onErrorListener);
-
-      // "static" data changed (total kills, username, steam-id)
-      // This will also be triggered the first time we register
-      // for events and will contain all the current information
-      overwolf.games.events.onInfoUpdates2.addListener(onInfoUpdates2Listener);
-      // an event triggerd
-      overwolf.games.events.onNewEvents.addListener(onNewEventsListener);
-    }
-
-    // ---------------------------------------------------------------------------
-    function unregisterEvents() {
-      overwolf.games.events.onError.removeListener(onErrorListener);
-      overwolf.games.events.onInfoUpdates2.removeListener(onInfoUpdates2Listener);
-      overwolf.games.events.onNewEvents.removeListener(onNewEventsListener);
-    }
-
-    // ---------------------------------------------------------------------------
-    function gameLaunched(gameInfoResult: { gameInfo: { isRunning: any; id: number; }; runningChanged: any; gameChanged: any; }) {
-      if (!gameInfoResult) {
-        return false;
-      }
-
-      if (!gameInfoResult.gameInfo) {
-        return false;
-      }
-
-      if (!gameInfoResult.runningChanged && !gameInfoResult.gameChanged) {
-        return false;
-      }
-
-      if (!gameInfoResult.gameInfo.isRunning) {
-        return false;
-      }
-
-      // NOTE: we divide by 10 to get the game class id without it's sequence number
-      if (gameData.hasOwnProperty(Math.floor(gameInfoResult.gameInfo.id / 10))) {
-        gameId = Math.floor(gameInfoResult.gameInfo.id / 10);
-        g_interestedInFeatures = gameData[gameId].interestedInFeatures;
-
-        return true;
-      }
-    }
-
-    // ---------------------------------------------------------------------------
-    function gameRunning(gameInfo: { isRunning: any; id: number; }) {
-
-      if (!gameInfo) {
-        return false;
-      }
-
-      if (!gameInfo.isRunning) {
-        return false;
-      }
-
-      // NOTE: we divide by 10 to get the game class id without it's sequence number
-      if (gameData.hasOwnProperty(Math.floor(gameInfo.id / 10))) {
-        gameId = Math.floor(gameInfo.id / 10);
-        g_interestedInFeatures = gameData[gameId].interestedInFeatures;
-
-        return true;
-      }
-    }
-
-    // ---------------------------------------------------------------------------
-    function setFeatures() {
-      overwolf.games.events.setRequiredFeatures(g_interestedInFeatures, function (info: { status: string; }) {
-        if (info.status == "error") {
-          console.log("Could not set required features: " + JSON.stringify(info));
-          console.log("Trying in 2 seconds");
-          window.setTimeout(setFeatures, 2000);
-          return;
-        }
-
-        console.log("Set required features:");
-        console.log(JSON.stringify(info));
-      });
-    }
-
-    // ---------------------------------------------------------------------------
-    // Start here
-    overwolf.games.onGameInfoUpdated.addListener(function (res: { gameInfo: { isRunning: any; id: number; }; runningChanged: any; gameChanged: any; }) {
-      if (gameLaunched(res)) {
-        registerEvents();
-        unregisterEvents();
-        setTimeout(setFeatures, 1000);
-      }
-      console.log("onGameInfoUpdated: " + JSON.stringify(res));
     });
+    // Register for the `gameClosed` event from the game detection service
+    this.gameDetectionService.on('gameClosed', (gameClosed: GameClosedEvent) => {
+      console.log(`Game was closed: ${gameClosed.name}`);
+      // Run game closed cleanup of the gep service
+      this.gepService.onGameClosed();
+    })
+    // Register for the `postGame` event from the game detection service
+    this.gameDetectionService.on(`postGame`, (postGame: PostGameEvent) => {
+      console.log(`Running post-game logic for game: ${postGame.name}`);
+    })
+    
+    // Register for the `gameEvent`, `infoUpdate`, and `error` events from the gep service
+    this.gepService.on('gameEvent', this.gepConsumer.onNewGameEvent);
+    this.gepService.on('infoUpdate', this.gepConsumer.onGameInfoUpdate)
+    this.gepService.on('error', this.gepConsumer.onGEPError)
 
-    overwolf.games.getRunningGameInfo(function (res: { isRunning: any; id: number; }) {
-      if (gameRunning(res)) {
-        registerEvents();
-        setTimeout(setFeatures, 1000);
-      }
-      console.log("getRunningGameInfo: " + JSON.stringify(res));
-    });
+    // Initialize the game detection service
+    this.gameDetectionService.init();
   }
 }
 
