@@ -8,6 +8,7 @@
     "author": "Overwolf",
     "icon": "assets/icon.png",
     "icon_gray": "assets/icon_gray.png",
+    "launcher_icon": "icons/desktop_icon.ico",
     "description": "Game Events Consumer Sample"
   },
   "data": {
