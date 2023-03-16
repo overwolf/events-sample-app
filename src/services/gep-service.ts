@@ -56,6 +56,10 @@ export class GEPService extends EventEmitter {
   /**
    * Handles all GEP-related logic when a game is launched
    *
+   * It is possible to register all listeners once when starting the app, and
+   * then only de-register them when closing the app (if at all). We choose
+   * to register/deregister them for every game, mostly just to show how.
+   *
    * @param {string[] | undefined} requiredFeatures
    * - Optional list of required features. Ignored if this is a GEP SDK game
    * @returns {Promise<string[] | undefined>}

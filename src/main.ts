@@ -29,7 +29,7 @@ export class Main {
     this.gameDetectionService.on(
       'gameLaunched',
       (gameLaunch: GameLaunchedEvent) => {
-        console.log(`Game was launched: ${gameLaunch.name}`);
+        console.log(`Game was launched: ${gameLaunch.name} ${gameLaunch.id}`);
         // Get the configured data for the launched game
         const gameConfig = gameData[gameLaunch.id];
         // If the detected game exists

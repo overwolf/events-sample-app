@@ -4,11 +4,11 @@
   "meta": {
     "name": "Generic Game Events Consumer Sample",
     "version": "0.1.0",
-    "minimum-overwolf-version": "0.222.0.1",
+    "minimum-overwolf-version": "0.220.0.1",
     "author": "Overwolf",
     "icon": "assets/icon.png",
     "icon_gray": "assets/icon_gray.png",
-    "launcher_icon": "icons/desktop_icon.ico",
+    "launcher_icon": "assets/desktop_icon.ico",
     "description": "Game Events Consumer Sample"
   },
   "data": {
