@@ -3,8 +3,8 @@
   "type": "WebApp",
   "meta": {
     "name": "Generic Game Events Consumer Sample",
-    "version": "0.0.1",
-    "minimum-overwolf-version": "0.125.1.0",
+    "version": "0.1.0",
+    "minimum-overwolf-version": "0.222.0.1",
     "author": "Overwolf",
     "icon": "assets/icon.png",
     "icon_gray": "assets/icon_gray.png",
