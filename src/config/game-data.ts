@@ -63,6 +63,11 @@ const data: { [id: number]: GameData } = {
       'hero_ability_skilled',
       'hero_ability_used',
       'hero_ability_changed',
+      'me',
+      'party',
+      'hero_pool',
+      'game',
+      'game_state'
     ],
     description: 'Dota match state data',
   },
@@ -216,7 +221,10 @@ const data: { [id: number]: GameData } = {
     description: 'COD warzone data',
   },
   21634: {
-    interestedInFeatures: ['match_info', 'game_info'],
+    interestedInFeatures: [
+      'match_info',
+      'game_info'
+    ],
     description: 'Tarkov data',
   },
   21640: {
@@ -231,8 +239,17 @@ const data: { [id: number]: GameData } = {
     description: 'Valorant data',
   },
   21848: {
-    interestedInFeatures: ['match_info', 'game_info'],
+    interestedInFeatures: [
+      'match_info',
+      'game_info'
+    ],
     description: 'Diablo 2 data',
+  },
+  22700: {
+    interestedInFeatures: [
+      'match_info'
+    ],
+    description: 'Diablo 4 data',
   },
   21854: {
     interestedInFeatures: [
@@ -245,11 +262,18 @@ const data: { [id: number]: GameData } = {
     description: 'Halo data',
   },
   21864: {
-    interestedInFeatures: ['match_info', 'game_info'],
+    interestedInFeatures: [
+      'match_info',
+      'game_info',
+      'location'
+    ],
     description: 'Lost Ark data',
   },
   21960: {
-    interestedInFeatures: ['match_info', 'game_info'],
+    interestedInFeatures: [
+      'match_info',
+      'game_info'
+    ],
     description: 'Axie data',
   },
   21876: {
@@ -301,23 +325,39 @@ const data: { [id: number]: GameData } = {
     description: 'LEP data',
   },
   21308: {
-    interestedInFeatures: ['match_info', 'game_info'],
+    interestedInFeatures: [
+      'match_info',
+      'game_info'
+    ],
     description: 'MTGA data',
   },
   21816: {
-    interestedInFeatures: ['game_info'],
+    interestedInFeatures: [
+      'game_info'
+    ],
     description: 'New world data',
   },
   21668: {
-    interestedInFeatures: ['game_info', 'kill'],
+    interestedInFeatures: [
+      'game_info',
+      'kill'
+    ],
     description: 'Valheim data',
   },
   8954: {
-    interestedInFeatures: ['game_info', 'match_info'],
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
     description: 'Warframe data',
   },
   6365: {
-    interestedInFeatures: ['kill', 'death', 'game_info', 'match_info'],
+    interestedInFeatures: [
+      'kill',
+      'death',
+      'game_info',
+      'match_info'
+    ],
     description: 'WOT data',
   },
   10746: {
@@ -330,6 +370,20 @@ const data: { [id: number]: GameData } = {
       'match_info',
     ],
     description: 'WOWS data',
+  },
+  22638: {
+    interestedInFeatures: [
+      'location',
+      'match_info'
+    ],
+    description: 'SOTF data',
+  },
+  22312: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Leap data',
   },
   22092: {
     description: 'Goose Goose Duck data',
