@@ -423,6 +423,16 @@ const data: { [id: number]: GameData } = {
   22250: {
     description: 'SquadBlast data',
   },
+  10844: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info',
+      'kill',
+      'death',
+      'assist'
+    ],
+    description: 'Overwatch 2 data',
+  },
 };
 
 export default data;
