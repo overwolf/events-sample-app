@@ -272,7 +272,7 @@ const data: { [id: number]: GameData } = {
     description: 'Diablo 2 data',
   },
   22700: {
-    interestedInFeatures: ['match_info'],
+    interestedInFeatures: ['match_info','game_info','me','location'],
     description: 'Diablo 4 data',
   },
   21854: {
