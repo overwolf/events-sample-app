@@ -82,7 +82,7 @@ export class LoggingService extends LoggingServiceBase {
         overwolf.io.writeFileContents(
           // eslint-disable-next-line max-len
           `${this.settingsService.settings.targetFolder}/${this.gepVersion}/${newLogName}--ow-${this.owVersion}.log`, // dst
-          result.content?.replaceAll(/\(INFO\).*?\(:\d+\) /, '') as string,
+          result.content?.replaceAll(/\(INFO\).*?\(:\d+\) /gm, '') as string,
           overwolf.io.enums.eEncoding.UTF8,
           false,
           (result) => {

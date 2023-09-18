@@ -55,7 +55,7 @@
     "start_window": "index",
     "windows": {
       "index": {
-        "open_dev_tools": true,
+        "open_dev_tools": false,
         "file": "windows/index/page.html",
         "is_background_page": true,
         "native_window": true,
@@ -63,7 +63,7 @@
         "dev_tools_window_style": false
       },
       "in-game": {
-        "open_dev_tools": true,
+        "open_dev_tools": false,
         "file": "windows/in-game/page.html",
         "focus_game_takeover": "ReleaseOnHidden",
         "focus_game_takeover_release_hotkey": "ges_showhide",
