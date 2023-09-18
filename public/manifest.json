@@ -60,24 +60,17 @@
         "is_background_page": true,
         "native_window": true,
         "desktop_only": true,
-        "dev_tools_window_style": true
+        "dev_tools_window_style": false
       },
       "in-game": {
         "open_dev_tools": true,
         "file": "windows/in-game/page.html",
         "focus_game_takeover": "ReleaseOnHidden",
         "focus_game_takeover_release_hotkey": "ges_showhide",
-        "is_background_page": false,
-        "transparent": true,
-        "resizable": true,
-        "show_in_taskbar": true,
-        "in_game_only": true,
-        "native_window": false,
-        "size": {
-          "width": 1150,
-          "height": 535
-        },
-        "dev_tools_window_style": true
+        "is_background_page": true,
+        "native_window": true,
+        "desktop_only": true,
+        "dev_tools_window_style": false
       }
     },
     "game_events": [
