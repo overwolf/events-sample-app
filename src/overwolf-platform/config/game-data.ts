@@ -11,7 +11,6 @@ const data: { [id: number]: GameData } = {
   5426: {
     interestedInFeatures: [
       'summoner_info',
-      'gameMode',
       'teams',
       'matchState',
       'kill',
@@ -26,9 +25,20 @@ const data: { [id: number]: GameData } = {
       'match_info',
       'damage',
       'heal',
-      'live_client_data',
+      //'live_client_data',
       'jungle_camps',
       'team_frames',
+      //TFT:
+      'counters',
+      'match_info',
+      'me',
+      'roster',
+      'store',
+      'board',
+      'bench',
+      'carousel',
+      'augments',
+      'game_info',
     ],
     description: 'LOL data',
   },
@@ -50,7 +60,7 @@ const data: { [id: number]: GameData } = {
       'match_info',
       'damage',
       'heal',
-      'live_client_data',
+    //  'live_client_data',
       'jungle_camps',
       'team_frames',
       'me',
@@ -225,7 +235,7 @@ const data: { [id: number]: GameData } = {
     ],
     description: 'Apex data',
   },
-  21570: {
+  /* 21570: {
     interestedInFeatures: [
       'counters',
       'match_info',
@@ -235,12 +245,12 @@ const data: { [id: number]: GameData } = {
       'board',
       'bench',
       'carousel',
-      'live_client_data',
+      //'live_client_data',
       'augments',
       'game_info',
     ],
     description: 'TFT data',
-  },
+  }, */
   21626: {
     interestedInFeatures: [
       'game_info',
