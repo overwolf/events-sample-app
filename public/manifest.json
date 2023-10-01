@@ -165,6 +165,11 @@
         "file": "plugins/simple-io-plugin.dll",
         "class": "overwolf.plugins.simpleio.SimpleIOPlugin"
       }
+    },
+    "developer": {
+      "enable_auto_refresh": true,
+      "reload_delay": 1000,
+      "filter": "*.*"
     }
   }
 }
