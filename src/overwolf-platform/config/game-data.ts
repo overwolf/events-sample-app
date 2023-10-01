@@ -296,7 +296,11 @@ const data: { [id: number]: GameData } = {
     description: 'Halo data',
   },
   21864: {
-    interestedInFeatures: ['match_info', 'game_info', 'location'],
+    interestedInFeatures: [
+      'game_info',
+      'match_info',
+      'location',
+    ],
     description: 'Lost Ark data',
   },
   21960: {
