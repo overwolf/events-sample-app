@@ -157,6 +157,7 @@ const data: { [id: number]: GameData } = {
       'match_info',
       'death',
       'game_info',
+      'training'
     ],
     description: 'Rocket league data',
   },
