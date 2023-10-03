@@ -417,6 +417,12 @@ const data: { [id: number]: GameData } = {
     ],
     description: 'CS2 data',
   },
+  23222: {
+    interestedInFeatures: [
+      'match_info',
+    ],
+    description: 'Starfield data',
+  },
 };
 
 export default data;
