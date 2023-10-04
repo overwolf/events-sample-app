@@ -119,7 +119,7 @@ export class IndexController {
       this.windowManagerService.closeWindow(this.inGameName, (window) => {
         this.communicationBusHostService.windowDisconnected(window.windowName);
         this.loggingService.backupLog(
-          `${gameClosed.name}/${new Date()
+          `${gameClosed.name.replaceAll(/[^a-z0-9]/gi, '')}/${new Date()
             .toISOString()
             .replaceAll(/[:]/gm, '-')
             .replace('T', '--')
