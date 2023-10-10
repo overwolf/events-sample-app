@@ -414,6 +414,7 @@ const data: { [id: number]: GameData } = {
   22730: {
     interestedInFeatures: [
       'match_info',
+      'live_data'
     ],
     description: 'CS2 data',
   },
