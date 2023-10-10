@@ -28,9 +28,9 @@ export class GEPConsumer {
       Object.keys(category).forEach((key) =>
         console.log(`Game Info Changed:
           {
-            "feature": ${info.feature},
-            "category": ${categoryKey},
-            "key": ${key},
+            "feature": "${info.feature}",
+            "category": "${categoryKey}",
+            "key": "${key}",
             "data": ${prettify(category[key])}
           }`),
       );
@@ -47,7 +47,7 @@ export class GEPConsumer {
     console.log(`Game Event Fired:
       [${event.events.map(
         (event, index) => `
-        event ${index}: ${prettify(event)}`,
+        "event ${index}": ${prettify(event)}`,
       )}
       ]`);
   }
