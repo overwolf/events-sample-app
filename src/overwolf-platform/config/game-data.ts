@@ -60,6 +60,7 @@ const data: { [id: number]: GameData } = {
       'match_info',
       'damage',
       'heal',
+      'gold',
     //  'live_client_data',
       'jungle_camps',
       'team_frames',
