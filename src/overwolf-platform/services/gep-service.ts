@@ -33,7 +33,7 @@ export class GEPService extends GEPServiceBase {
       console.log('Registering required features');
       this.enabledFeatures = await this.setRequiredFeatures(
         requiredFeatures,
-        10,
+        30,
       );
       this.emit('enabledFeatures', this.enabledFeatures);
       return this.enabledFeatures;

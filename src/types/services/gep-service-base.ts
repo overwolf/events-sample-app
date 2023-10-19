@@ -126,8 +126,8 @@ export abstract class GEPServiceBase extends EventEmitter<GEPEvents> {
         return this.enabledFeatures;
       } catch (e) {
         console.warn(`Could not set required features: ${JSON.stringify(e)}`);
-        console.log('Retrying in 2 seconds');
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        console.log('Retrying in 5 seconds');
+        await new Promise((resolve) => setTimeout(resolve, 5000));
       }
     }
 
