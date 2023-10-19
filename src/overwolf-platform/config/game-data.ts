@@ -25,6 +25,7 @@ const data: { [id: number]: GameData } = {
       'match_info',
       'damage',
       'heal',
+      `gold`,
       //'live_client_data',
       'jungle_camps',
       'team_frames',
@@ -73,7 +74,7 @@ const data: { [id: number]: GameData } = {
       'augments',
       'game_info',
     ],
-    description: 'LOL + TFT data',
+    description: 'LOL + TFT PBE data',
   },
   7212: {
     interestedInFeatures: [
