@@ -423,6 +423,13 @@ const data: { [id: number]: GameData } = {
     ],
     description: 'Starfield data',
   },
+  22088: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Baldurs gate 3 data',
+  },
 };
 
 export default data;
