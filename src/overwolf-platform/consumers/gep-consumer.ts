@@ -26,13 +26,13 @@ export class GEPConsumer {
       // @ts-expect-error incomplete underlying typings
       const category = info.info[categoryKey];
       Object.keys(category).forEach((key) =>
-        console.log(`Game Info Changed:
-          {
-            "feature": "${info.feature}",
-            "category": "${categoryKey}",
-            "key": "${key}",
-            "data": ${prettify(category[key])}
-          }`),
+        console.log(
+          `Game Info Changed:{"feature": "${
+            info.feature
+          }", "category": "${categoryKey}", "key": "${key}", "data": ${prettify(
+            category[key],
+          )}}`,
+        ),
       );
     });
   }
@@ -44,12 +44,11 @@ export class GEPConsumer {
    * - An array of fired Game Events
    */
   public onNewGameEvent(event: GameEventPayload) {
-    console.log(`Game Event Fired:
-      [${event.events.map(
-        (event, index) => `
-       "event ${index}": ${prettify(event)}`,
-      )}
-      ]`);
+    console.log(
+      `Game Event Fired:[${event.events.map(
+        (event, index) => `"event ${index}": ${prettify(event)}`,
+      )}]`,
+    );
   }
 }
 
