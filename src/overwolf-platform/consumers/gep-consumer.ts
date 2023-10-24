@@ -22,7 +22,19 @@ export class GEPConsumer {
    * @param {InfoUpdatePayload} info - An array of fired info updates
    */
   public onGameInfoUpdate(info: InfoUpdatePayload) {
-    console.log(`Game Info Changed: ${prettify(info.info)}`);
+    Object.keys(info.info).forEach((categoryKey) => {
+      // @ts-expect-error incomplete underlying typings
+      const category = info.info[categoryKey];
+      Object.keys(category).forEach((key) =>
+        console.log(`Game Info Changed:
+          {
+            "feature": "${info.feature}",
+            "category": "${categoryKey}",
+            "key": "${key}",
+            "data": ${prettify(category[key])}
+          }`),
+      );
+    });
   }
 
   /**
@@ -32,7 +44,12 @@ export class GEPConsumer {
    * - An array of fired Game Events
    */
   public onNewGameEvent(event: GameEventPayload) {
-    console.log(`Game Event Fired: ${prettify(event.events)}`);
+    console.log(`Game Event Fired:
+      [${event.events.map(
+        (event, index) => `
+        "event ${index}": ${prettify(event)}`,
+      )}
+      ]`);
   }
 }
 
