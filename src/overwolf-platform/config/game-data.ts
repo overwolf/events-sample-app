@@ -231,6 +231,7 @@ const data: { [id: number]: GameData } = {
       'match_summary',
       'location',
       'match_info',
+      'game_info',
       'victory',
       'damage',
       'inventory',
@@ -423,6 +424,7 @@ const data: { [id: number]: GameData } = {
   23222: {
     interestedInFeatures: [
       'match_info',
+      `location`
     ],
     description: 'Starfield data',
   },
