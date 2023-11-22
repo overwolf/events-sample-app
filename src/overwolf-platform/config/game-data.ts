@@ -277,6 +277,7 @@ const data: { [id: number]: GameData } = {
       'kill',
       'death',
       'gep_internal',
+      'location'
     ],
     description: 'Valorant data',
   },
