@@ -292,7 +292,7 @@ const data: { [id: number]: GameData } = {
       'gep_internal',
       'location'
     ],
-    description: 'Valorant data',
+    description: 'Valorant PBE data',
   },
   21848: {
     interestedInFeatures: ['match_info', 'game_info'],
@@ -448,6 +448,20 @@ const data: { [id: number]: GameData } = {
       'location'
     ],
     description: 'Baldurs gate 3 data',
+  },
+  23424: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info',
+    ],
+    description: 'Call of Duty: Modern Warfare 3 data',
+  },
+  22328: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info',
+    ],
+    description: 'Call of Duty: Modern Warfare 2 / Warzone 2 data',
   },
 };
 
