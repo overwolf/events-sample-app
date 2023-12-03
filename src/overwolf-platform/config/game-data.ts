@@ -282,6 +282,18 @@ const data: { [id: number]: GameData } = {
     ],
     description: 'Valorant data',
   },
+  22904: {
+    interestedInFeatures: [
+      'game_info',
+      'me',
+      'match_info',
+      'kill',
+      'death',
+      'gep_internal',
+      'location'
+    ],
+    description: 'Valorant data',
+  },
   21848: {
     interestedInFeatures: ['match_info', 'game_info'],
     description: 'Diablo 2 data',
