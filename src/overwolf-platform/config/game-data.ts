@@ -454,14 +454,21 @@ const data: { [id: number]: GameData } = {
       'game_info',
       'match_info',
     ],
-    description: 'Call of Duty: Modern Warfare 3 data',
+    description: 'Call of Duty: Modern Warfare 3 data / Warzone 2 data',
   },
   22328: {
     interestedInFeatures: [
       'game_info',
       'match_info',
     ],
-    description: 'Call of Duty: Modern Warfare 2 / Warzone 2 data',
+    description: 'Call of Duty: Modern Warfare 2',
+  },
+  21656: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info',
+    ],
+    description: 'Genshin Impact',
   },
 };
 
