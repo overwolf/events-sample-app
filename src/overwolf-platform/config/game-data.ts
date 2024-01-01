@@ -470,6 +470,13 @@ const data: { [id: number]: GameData } = {
     ],
     description: 'Genshin Impact',
   },
+  21620: {
+    interestedInFeatures: [
+      'game_client_data',
+      'match_info',
+    ],
+    description: 'Legends of Runeterra',
+  },
 };
 
 export default data;
