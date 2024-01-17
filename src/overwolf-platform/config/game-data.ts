@@ -282,6 +282,18 @@ const data: { [id: number]: GameData } = {
     ],
     description: 'Valorant data',
   },
+  22904: {
+    interestedInFeatures: [
+      'game_info',
+      'me',
+      'match_info',
+      'kill',
+      'death',
+      'gep_internal',
+      'location'
+    ],
+    description: 'Valorant PBE data',
+  },
   21848: {
     interestedInFeatures: ['match_info', 'game_info'],
     description: 'Diablo 2 data',
@@ -436,6 +448,34 @@ const data: { [id: number]: GameData } = {
       'location'
     ],
     description: 'Baldurs gate 3 data',
+  },
+  23424: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info',
+    ],
+    description: 'Call of Duty: Modern Warfare 3 data / Warzone 2 data',
+  },
+  22328: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info',
+    ],
+    description: 'Call of Duty: Modern Warfare 2',
+  },
+  21656: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info',
+    ],
+    description: 'Genshin Impact',
+  },
+  21620: {
+    interestedInFeatures: [
+      'game_client_data',
+      'match_info',
+    ],
+    description: 'Legends of Runeterra',
   },
   23522: {
     interestedInFeatures: [
