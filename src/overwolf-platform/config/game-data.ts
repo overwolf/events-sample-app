@@ -437,6 +437,12 @@ const data: { [id: number]: GameData } = {
     ],
     description: 'Baldurs gate 3 data',
   },
+  23522: {
+    interestedInFeatures: [
+      'game_info'
+    ],
+    description: 'Lethal Company data',
+  },
 };
 
 export default data;
