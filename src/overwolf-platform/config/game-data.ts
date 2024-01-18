@@ -479,7 +479,8 @@ const data: { [id: number]: GameData } = {
   },
   23522: {
     interestedInFeatures: [
-      'game_info'
+      'game_info',
+      'match_info',
     ],
     description: 'Lethal Company data',
   },
