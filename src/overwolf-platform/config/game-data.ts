@@ -483,6 +483,12 @@ const data: { [id: number]: GameData } = {
     ],
     description: 'Lethal Company data',
   },
+  23478: {
+    interestedInFeatures: [
+      'game_info'
+    ],
+    description: 'The finals data',
+  },
 };
 
 export default data;
