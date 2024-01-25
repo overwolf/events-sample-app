@@ -490,6 +490,14 @@ const data: { [id: number]: GameData } = {
     ],
     description: 'The finals data',
   },
+  23944: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info',
+      `location`
+    ],
+    description: 'Palworld data',
+  },
 };
 
 export default data;
