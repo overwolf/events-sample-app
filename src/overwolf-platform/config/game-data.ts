@@ -26,7 +26,7 @@ const data: { [id: number]: GameData } = {
       'damage',
       'heal',
       `gold`,
-      //'live_client_data',
+      'live_client_data',
       'jungle_camps',
       'team_frames',
       //TFT:
@@ -112,6 +112,15 @@ const data: { [id: number]: GameData } = {
       'hero_pool',
       'game',
       'game_state',
+    // these are also supported but spam the console as they happen a lot:
+      'clock_time_changed',
+      'xpm',
+      'gpm',
+      'gold',
+      'hero_buyback_info_changed',
+      'hero_health_mana_info',
+      'hero_ability_cooldown_changed',
+      'hero_item_cooldown_changed', 
     ],
     description: 'Dota match state data',
   },
@@ -424,6 +433,7 @@ const data: { [id: number]: GameData } = {
       'kill',
       'death',
       'assist',
+      'roster'
     ],
     description: 'Overwatch 2 data',
   },
