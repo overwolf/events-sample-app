@@ -112,6 +112,7 @@ const data: { [id: number]: GameData } = {
       'hero_pool',
       'game',
       'game_state',
+      `damage`
     ],
     description: 'Dota match state data',
   },
