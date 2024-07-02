@@ -1,23 +1,23 @@
-import { EventEmitter } from 'events';
 import { injectable } from 'tsyringe';
 import {
-  GameClosedEvent,
-  GameLaunchedEvent,
-  PostGameEvent,
+  GameClosedPayload,
+  GameDetectionServiceBase,
+  GameLaunchedPayload,
+  PostGamePayload,
   RunningGame,
-} from '../interfaces/running-game';
+} from '../../types/services/game-detection-service-base';
 
 @injectable()
-export class GameDetectionService extends EventEmitter {
+export class GameDetectionService extends GameDetectionServiceBase {
   /**
    * The currently running game (if any)
    */
   private _runningGame?: RunningGame = undefined;
 
   /**
-   * Setup Game Detection listeners
+   * Begin listening to running game data
    */
-  public init() {
+  public start() {
     // Register listener for running game info changed
     overwolf.games.onGameInfoUpdated.addListener((update) =>
       this.gameUpdated(update),
@@ -45,8 +45,9 @@ export class GameDetectionService extends EventEmitter {
     // Ensure that fresh launch was not called while there was a running game
     if (freshLaunch && this._runningGame)
       throw new Error(
-        // eslint-disable-next-line max-len
-        `A fresh launch was called, but a running game was already detected! Launched \`${gameInfo.title}\`, while \`${this._runningGame.name}\` was already running`,
+        'A fresh launch was called, but a running game was already detected! ' +
+          `Launched \`${gameInfo.title}\`, ` +
+          `while \`${this._runningGame.name}\` was already running`,
       );
 
     // Set the currently running game
@@ -58,7 +59,7 @@ export class GameDetectionService extends EventEmitter {
     };
 
     // Construct the `gameLaunched` event
-    const gameLaunchedEvent: GameLaunchedEvent = {
+    const gameLaunchedEvent: GameLaunchedPayload = {
       ...this._runningGame,
       freshLaunch,
     };
@@ -81,7 +82,7 @@ export class GameDetectionService extends EventEmitter {
       );
 
     // Construct the `gameClosed` event
-    const gameClosedEvent: GameClosedEvent = {
+    const gameClosedEvent: GameClosedPayload = {
       ...this._runningGame,
     };
     // Delete the currently running game
@@ -93,7 +94,7 @@ export class GameDetectionService extends EventEmitter {
     // If post-game logic should run, emit the `postgame` event
     if (fullShutdown) {
       // Construct the `postGame` event
-      const postGameEvent: PostGameEvent = {
+      const postGameEvent: PostGamePayload = {
         ...gameClosedEvent,
       };
       // Emit the `postGame` event
