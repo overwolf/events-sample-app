@@ -16,38 +16,9 @@
     "game_targeting": {
       "type": "dedicated",
       "game_ids": [
-        765,
-        1136,
-        5426,
-        7212,
-        7314,
-        7764,
-        8032,
-        10798,
-        10826,
-        10906,
-        21216,
-        21566,
-        21570,
-        21626,
-        21634,
-        21640,
-        21848,
-        21854,
-        21864,
-        21960,
-        21876,
-        9898,
-        10624,
-        10902,
-        21308,
-        21816,
-        21668,
-        8954,
-        6365,
-        10746,
-        22092,
-        22250
+        765, 1136, 5426, 7212, 7314, 7764, 8032, 10798, 10826, 10906, 21216,
+        21566, 21570, 21626, 21634, 21640, 21848, 21854, 21864, 21960, 21876,
+        9898, 10624, 10902, 21308, 21816, 21668, 8954, 6365, 10746, 22092, 22250
       ]
     },
     "start_window": "index",
@@ -58,104 +29,41 @@
         "is_background_page": true,
         "native_window": true,
         "desktop_only": true,
-        "dev_tools_window_style": true
+        "dev_tools_window_style": false
       },
       "in-game": {
         "open_dev_tools": true,
         "file": "windows/in-game/page.html",
         "focus_game_takeover": "ReleaseOnHidden",
         "focus_game_takeover_release_hotkey": "ges_showhide",
-        "is_background_page": false,
-        "transparent": true,
-        "resizable": true,
-        "show_in_taskbar": true,
-        "in_game_only": true,
-        "native_window": false,
-        "size": {
-          "width": 1150,
-          "height": 535
-        },
-        "dev_tools_window_style": true
+        "is_background_page": true,
+        "native_window": true,
+        "desktop_only": true,
+        "dev_tools_window_style": false
       }
     },
     "game_events": [
-      765,
-      5426,
-      7212,
-      7314,
-      7764,
-      8032,
-      10798,
-      10826,
-      10906,
-      21216,
-      21566,
-      21570,
-      21626,
-      21634,
-      21640,
-      21848,
-      21854,
-      21864,
-      21960,
-      21876,
-      9898,
-      10624,
-      10902,
-      21308,
-      21816,
-      21668,
-      8954,
-      6365,
-      10746,
-      22092,
-      22250
+      765, 5426, 7212, 7314, 7764, 8032, 10798, 10826, 10906, 21216, 21566,
+      21570, 21626, 21634, 21640, 21848, 21854, 21864, 21960, 21876, 9898,
+      10624, 10902, 21308, 21816, 21668, 8954, 6365, 10746, 22092, 22250
     ],
     "hotkeys": {
       "only_in_league": {
-          "title": "Hello From League Settings",
-          "action-type": "custom",
-          "default": "Ctrl+G",
-          "game_ids": [5426]
+        "title": "Hello From League Settings",
+        "action-type": "custom",
+        "default": "Ctrl+G",
+        "game_ids": [5426]
       }
-  },
+    },
     "launch_events": [
       {
         "event": "GameLaunch",
         "event_data": {
           "game_ids": [
-            765,
-            1136,
-            5426,
-            7212,
-            7314,
-            7764,
-            8032,
-            10798,
-            10826,
-            10906,
-            21216,
-            21566,
-            21570,
-            21626,
-            21634,
-            21640,
-            21848,
-            21854,
-            21864,
-            21960,
-            21876,
-            9898,
-            10624,
-            10902,
-            21308,
-            21816,
-            21668,
-            8954,
-            6365,
-            10746,
-            22092,
-            22250
+            765, 1136, 5426, 7212, 7314, 7764, 8032, 10798, 10826, 10906, 21216,
+            21566, 21570, 21626, 21634, 21640, 21848, 21854, 21864, 21960,
+            21876, 9898, 10624, 10902, 21308, 21816, 21668, 8954, 6365, 10746,
+            22092, 22250
           ]
         },
         "start_minimized": false
@@ -166,6 +74,11 @@
         "file": "plugins/simple-io-plugin.dll",
         "class": "overwolf.plugins.simpleio.SimpleIOPlugin"
       }
+    },
+    "developer": {
+      "enable_auto_refresh": true,
+      "reload_delay": 1000,
+      "filter": "*.*"
     }
   }
 }
