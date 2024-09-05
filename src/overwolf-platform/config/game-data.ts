@@ -26,7 +26,7 @@ const data: { [id: number]: GameData } = {
       'damage',
       'heal',
       `gold`,
-      'live_client_data',
+    //'live_client_data',
       'jungle_camps',
       'team_frames',
       //TFT:
@@ -62,7 +62,7 @@ const data: { [id: number]: GameData } = {
       'damage',
       'heal',
       'gold',
-    //  'live_client_data',
+    // 'live_client_data',
       'jungle_camps',
       'team_frames',
       'me',
@@ -107,6 +107,7 @@ const data: { [id: number]: GameData } = {
       'hero_ability_skilled',
       'hero_ability_used',
       'hero_ability_changed',
+      'hero_attributes_skilled',
       'me',
       'party',
       'hero_pool',
@@ -508,6 +509,13 @@ const data: { [id: number]: GameData } = {
       `location`
     ],
     description: 'Palworld data',
+  },
+  24484: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Spectre data',
   },
 };
 
