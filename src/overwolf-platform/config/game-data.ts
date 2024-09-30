@@ -224,6 +224,7 @@ const data: { [id: number]: GameData } = {
       'items',
       'counters',
       'match_info',
+      'game_info',
       'map',
     ],
     description: 'Fortnite data',
@@ -509,6 +510,111 @@ const data: { [id: number]: GameData } = {
       `location`
     ],
     description: 'Palworld data',
+  },
+  24504: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Black Myth Wukong',
+  },
+  24482: {
+    interestedInFeatures: [
+      'game_info',
+      'match_ingo',
+      'me'
+    ],
+    description: 'Deadlock',
+  },
+  24548: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Warhammer 40000 Space Marine 2',
+  },
+  23930: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Once Human',
+  },
+  24000: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Helldivers 2',
+  },
+  24110: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Content Warning',
+  },
+  22584: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Dark and Darker',
+  },
+  22804: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Honkai Star Rail',
+  },
+  24176: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Manor Lords',
+  },
+  4688: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Roblox',
+  },
+  24360: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'The First Descendant',
+  },
+  24300: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Wuthering Waves',
+  },
+  22994: {
+    interestedInFeatures: [
+      'game_info',
+      'match_ingo',
+    ],
+    description: 'XDefiant',
+  },
+  24218: {
+    interestedInFeatures: [
+      'game_info',
+      'match_ingo',
+    ],
+    description: 'Hades 2',
+  },
+  6350: {
+    interestedInFeatures: [
+      'match_info'
+    ],
+    description: 'Final Fantasy XIV',
   },
   24484: {
     interestedInFeatures: [
