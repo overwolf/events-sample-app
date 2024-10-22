@@ -521,7 +521,7 @@ const data: { [id: number]: GameData } = {
   24482: {
     interestedInFeatures: [
       'game_info',
-      'match_ingo',
+      'match_info',
       'me'
     ],
     description: 'Deadlock',
