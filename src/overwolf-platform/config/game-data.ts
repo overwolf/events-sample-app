@@ -725,6 +725,13 @@ const data: { [id: number]: GameData } = {
       'match_info'
     ],
     description: 'Hytale',
+  },
+  27724: {
+    interestedInFeatures: [
+      'game_info',
+      'match_info'
+    ],
+    description: 'Arknights Endfield',
   }
 };
 
