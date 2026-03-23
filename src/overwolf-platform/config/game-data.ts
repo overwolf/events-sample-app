@@ -729,7 +729,8 @@ const data: { [id: number]: GameData } = {
   27724: {
     interestedInFeatures: [
       'game_info',
-      'match_info'
+      'match_info',
+      'location'
     ],
     description: 'Arknights Endfield',
   }
