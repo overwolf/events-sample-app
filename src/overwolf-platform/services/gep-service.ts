@@ -102,6 +102,12 @@ export class GEPService extends GEPServiceBase {
   private infoListener = (info: InfoUpdatePayload) =>
     this.onInfoUpdateListener(info);
 
+  // onNewEvent2 fires plugin-level events (plugin_crashed, etc.) as a flat
+  // {name, data, channelId} object rather than the {events:[]} wrapper used by
+  // onNewEvents. Wrap it so the existing gameEvent pipeline handles it.
+  private event2Listener = (event: overwolf.games.events.GameEvent2) =>
+    this.onGameEventListener({ events: [event as any] });
+
   /**
    * Register all GEP listeners
    *
@@ -117,6 +123,9 @@ export class GEPService extends GEPServiceBase {
     // Register Game event listener
     overwolf.games.events.onNewEvents.addListener(this.eventsListener);
 
+    // Register plugin-level event listener (plugin_crashed, etc.)
+    overwolf.games.events.onNewEvent2.addListener(this.event2Listener);
+
     return true;
   }
 
@@ -129,6 +138,7 @@ export class GEPService extends GEPServiceBase {
     overwolf.games.events.onError.removeListener(this.errorListener);
     overwolf.games.events.onInfoUpdates2.removeListener(this.infoListener);
     overwolf.games.events.onNewEvents.removeListener(this.eventsListener);
+    overwolf.games.events.onNewEvent2.removeListener(this.event2Listener);
     return true;
   }
 }

@@ -29,8 +29,9 @@ export class GEPConsumer {
         const value = category[key];
         console.log(`Game Info Changed:{"feature": "${info.feature}", "category": "${categoryKey}", "key": "${key}", "data": ${prettify(value)}}`);
 
-        if ((key === 'plugin_status' || key === 'plugin status') && typeof value === 'string' && value.startsWith('failed_')) {
-          console.error(`[PLUGIN ERROR] plugin status: ${value}`);
+        if (categoryKey === 'plugin_status' && typeof value === 'string' && value.startsWith('failed_')) {
+          console.log(JSON.stringify({ category: categoryKey, key, value }));
+          console.error(`[PLUGIN ERROR] plugin_status.${key}: ${value}`);
         }
 
         if (key.startsWith("roster")) {
@@ -70,7 +71,13 @@ export class GEPConsumer {
 
     event.events.forEach((gameEvent) => {
       if (gameEvent.name === 'plugin_crashed') {
-        console.error(`[PLUGIN CRASH] ${prettify(gameEvent)}`);
+        console.log(JSON.stringify(gameEvent));
+        try {
+          const parsed = typeof gameEvent.data === 'string' ? JSON.parse(gameEvent.data) : gameEvent.data;
+          console.error(`[PLUGIN CRASH] module: ${parsed?.module ?? 'unknown'}`);
+        } catch {
+          console.error(`[PLUGIN CRASH] ${gameEvent.data}`);
+        }
       }
     });
   }
