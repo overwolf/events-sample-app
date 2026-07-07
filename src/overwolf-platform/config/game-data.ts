@@ -28,7 +28,7 @@ const data: { [id: number]: GameData } = {
       `gold`,
       `location`,
       'panel_location',
-    //  'live_client_data',
+      'live_client_data',
       'jungle_camps',
       'team_frames',
       //TFT:
@@ -42,6 +42,7 @@ const data: { [id: number]: GameData } = {
       'carousel',
       'augments',
       'game_info',
+      'match_stats'
     ],
     description: 'LOL data',
   },
@@ -444,7 +445,8 @@ const data: { [id: number]: GameData } = {
   22730: {
     interestedInFeatures: [
       'match_info',
-      'live_data'
+      'live_data',
+      'chat'
     ],
     description: 'CS2 data',
   },
