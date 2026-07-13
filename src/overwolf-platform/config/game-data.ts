@@ -735,6 +735,14 @@ const data: { [id: number]: GameData } = {
       'location'
     ],
     description: 'Arknights Endfield',
+  },
+  27936: {
+    interestedInFeatures: [
+      'match_info',
+      'game_info',
+      'location'
+    ],
+    description: 'Subnautica 2',
   }
 };
 
