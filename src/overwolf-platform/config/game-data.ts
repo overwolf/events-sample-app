@@ -28,7 +28,7 @@ const data: { [id: number]: GameData } = {
       `gold`,
       `location`,
       'panel_location',
-      'live_client_data',
+      // 'live_client_data',
       'jungle_camps',
       'team_frames',
       //TFT:
@@ -693,7 +693,7 @@ const data: { [id: number]: GameData } = {
     ],
     description: 'Peak',
   },
-   22176: {
+  22176: {
     interestedInFeatures: [
       'game_info',
       'match_info'
@@ -707,21 +707,21 @@ const data: { [id: number]: GameData } = {
     ],
     description: '2xKO',
   },
-    27168: {
+  27168: {
     interestedInFeatures: [
       'game_info',
       'match_info'
     ],
     description: 'Arc Raides',
   },
-   26462: {
+  26462: {
     interestedInFeatures: [
       'game_info',
       'match_info'
     ],
     description: 'Minecraft Bedrock',
   },
-    27618: {
+  27618: {
     interestedInFeatures: [
       'game_info',
       'match_info'
@@ -743,7 +743,29 @@ const data: { [id: number]: GameData } = {
       'location'
     ],
     description: 'Subnautica 2',
+  },
+  28162: {
+    interestedInFeatures: [
+      'summoner_info',
+      'gameMode',
+      'teams',
+      'matchState',
+      'level',
+      'match_info',
+      'damage',
+      'gold',
+      // 'live_client_data',
+      'me',
+      'roster',
+      'store',
+      'board',
+      'bench',
+      'carousel',
+      'augments',
+      'game_info',
+      'match_stats'
+    ],
+    description: 'LOL/TFT PBE New  Game ID',
   }
 };
-
-export default data;
+  export default data;
