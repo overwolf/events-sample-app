@@ -765,7 +765,30 @@ const data: { [id: number]: GameData } = {
       'game_info',
       'match_stats'
     ],
-    description: 'LOL/TFT PBE New  Game ID',
+    description: 'TFT PBE New Game ID',
+  },
+  28164: {
+    interestedInFeatures: [
+      'summoner_info',
+      'gameMode',
+      'teams',
+      'matchState',
+      'level',
+      'match_info',
+      'damage',
+      'gold',
+      // 'live_client_data',
+      'me',
+      'roster',
+      'store',
+      'board',
+      'bench',
+      'carousel',
+      'augments',
+      'game_info',
+      'match_stats'
+    ],
+    description: 'TFT UE5',
   }
 };
   export default data;
