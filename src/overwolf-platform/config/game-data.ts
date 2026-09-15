@@ -250,6 +250,8 @@ const data: { [id: number]: GameData } = {
       'damage',
       'inventory',
       'localization',
+      'ring',
+      'player_stats'
     ],
     description: 'Apex data',
   },
