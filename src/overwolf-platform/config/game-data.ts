@@ -186,6 +186,7 @@ const data: { [id: number]: GameData } = {
       'match_info',
       'defuser',
       'me',
+      'damage',
     ],
     description: 'R6 data',
   },
