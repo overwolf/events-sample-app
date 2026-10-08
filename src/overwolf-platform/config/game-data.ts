@@ -5,7 +5,7 @@ interface GameData {
 
 const data: { [id: number]: GameData } = {
   765: {
-    interestedInFeatures: ['game_info', 'addons'],
+    interestedInFeatures: ['game_info', 'addons', 'location', 'player_info'],
     description: 'WOW data',
   },
   5426: {
@@ -124,7 +124,8 @@ const data: { [id: number]: GameData } = {
       'hero_health_mana_info',
       'hero_ability_cooldown_changed',
       'hero_item_cooldown_changed',
-      `damage`
+      `damage`,
+      'counters'
     ],
     description: 'Dota match state data',
   },
@@ -738,6 +739,13 @@ const data: { [id: number]: GameData } = {
       'location'
     ],
     description: 'Arknights Endfield',
+  },
+  27858: {
+    interestedInFeatures: [
+      'match_info',
+      'player_info'
+    ],
+    description: 'Slay the Spire 2',
   },
   27936: {
     interestedInFeatures: [

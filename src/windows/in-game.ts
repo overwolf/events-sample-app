@@ -55,7 +55,7 @@ Failed to subscribe to ${failed.length} features: ${JSON.stringify(
   private connectionReceivedListener(mainContainer: DependencyContainer) {
     this.gepService = mainContainer.resolve<GEPServiceBase>(GEPToken);
 
-    if (!this.gepService.getEnabledFeatures()) {
+    if (!this.gepService.getEnabledFeatures().requested.length) {
       this.gepService.once('enabledFeatures', this.logEnabledFeatures);
     } else this.logEnabledFeatures(this.gepService.getEnabledFeatures());
 
